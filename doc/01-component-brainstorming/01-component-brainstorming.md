@@ -1,8 +1,8 @@
 # Portfolio Part 1: Component Brainstorming
 
-- **Name**: <!-- TODO: fill with first and last name (e.g., Brutus Buckeye) then delete this comment -->
-- **Dot Number**: <!-- TODO: fill with OSU dot number (e.g., buckeye.17) then delete this comment -->
-- **Due Date**: <!-- TODO: fill with due date and time (e.g., 10/17 @ 3:10 PM EST) then delete this comment -->
+- **Name**: Ryan Chou
+- **Dot Number**: chou.391
+- **Due Date**: 2/19 @8:00 PM EST
 
 ## Assignment Overview
 
@@ -106,23 +106,19 @@ Below is further rationale/explanation for the rubric items above:
 > brainstorming. Plus it helps us get to know you better! Feel free to share
 > images in this section.
 
-<!-- TODO: briefly talk about your interests then delete this comment.
-Also, protip: you can preview what your response looks like by hitting
-the magnifying glass icon in the upper-right corner or pressing CTRL+K and
-then V. This kind of button combination is called a chord, for whatever
-reason -->
+I always want to do sports analytics with a professional sports team in the future. Now I'm working
+with Ohio State Club basketball analytics team and it really inspired me to keep pushing myself
+into this realm. I also want to integrate data analytics into healthcare innovations
+
+
 
 ## Assignment
-
-<!-- TODO: read the assignment section then delete this comment -->
 
 As previously stated, you are tasked with brainstorming 3 possible components.
 To aid you in this process, we have provided [some example components][example-components]
 that may help you in your brainstorming. All of these components were made at
 some point by one of your peers, so you should feel confident that you can
 accomplish any of them.
-
-<!-- TODO: browse the list of possible projects then delete this comment -->
 
 There is no requirement that you use any of the components listed above.
 If you want to model something else, go for it! Very common early object
@@ -132,7 +128,6 @@ you're just brainstorming right now. You do not have to commit to anything.
 
 ### Example Component
 
-<!-- TODO: review this example component then delete this comment -->
 
 To help you brainstorm a few components, we've provided an example below of a
 component you already know well: NaturalNumber. We highly recommend that you
@@ -200,68 +195,84 @@ will likely refine your design to make your implementation easier to use.
 
 > Please use this section to share your designs.
 
-- Component Design #1: <!-- TODO: give component a name then delete this comment -->
+- Component Design #1: Player stats tracker
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+    The model tracks the statistical performance of Ohio State Club Team basketball players. Key metrics employed include win-rate and plus-minus points per game to deliver a clear overview of each player's contributions.
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
-  - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
-  - **Additional Considerations** (*note*: "I don't know" is an acceptable
-    answer for each of the following questions):
-    - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
-    - Would this component rely on any internal classes (e.g., `Map.Pair`)?
-      Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
-    - Would this component need any enums or constants (e.g.,
-      `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
-    - Can you implement your secondary methods using your kernel methods?
-      Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+    - addStat(String stat, double value)
+    - removeStat(String stat)
+    - getStatTotal(Stat stat)
+    - getWinRate()
+    - totalGamePlayed()
 
-- Component Design #2: <!-- TODO: give component a name then delete this comment -->
-  - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
-  - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
+    - getAverageStat(Stat stat, int gamesPlayed)
+    - displayStats()
+    - double calculatedWinRate()
+    - double avPlusMinus()
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, the player stats will change after each game, making the object mutable.
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, you could use Map.Pair or a similar structure if you want to maintain a mapping of player ids to their respective stats.
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, might use constants like maximum number of games or other values. I will use enum to store player names and prevent typo.
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - getTotalStats() method can utilize the getStatTotal(Stat stat) method for each statistic to compute the cumulative total.
 
-- Component Design #3: <!-- TODO: give component a name then delete this comment -->
+- Component Design #2: Virus Inflection Tracker
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+    - The model tracks data on different viruses that cause sickness over a span of five years and into the future. It aims to provide trends and impacts of various viruses on public health.
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
+    - getVirusTrend(String virusName, String region)
+    - getImpactSummary(String virusName, String region)
+    - getForecast(String virusName, int yearsAhead)
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
+    - getAllVirusNames()
+    - getRegionStats(String region)
+    -
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, the Virus Inflection Tracker would be mutable since it involves continual recording and updating of infection data over time
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, this component might rely on internal classes such as Map to organize virus data by name and region.
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, this component would benefit from enums to define different virus statuses, regions, or types of data being recorded.
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - getMonthlyInfectionRate(String virusName, String region)
+
+- Component Design #3: Nutrient Tracker
+  - **Description**:
+    - This component models nutritional data typically what I eat every week.
+  - **Kernel Methods**:
+    - addFoodEntry(String foodName, double servings, double calories, double protein, double carbs, double fats)
+    - getNutrientBreakdown(String foodName)
+    - removeFoodEntry(String foodName)
+  - **Secondary Methods**:
+    - getAverageNutrientIntake()
+    - getFoodList()
+    - getWeeklyNutrientIntake(LocalDate weekStart)
+  - **Additional Considerations** (*note*: "I don't know" is an acceptable
+    answer for each of the following questions):
+    - Would this component be mutable? Answer and explain:
+      - the Nutrient Tracker is mutable as it continuously records food entries and updated nutritional information
+    - Would this component rely on any internal classes (e.g., `Map.Pair`)?
+      Answer and explain:
+      - Yes, this component could use internal classes like Map to pair food names with their respective nutrient information/.
+    - Would this component need any enums or constants (e.g.,
+      `Program.Instruction`)? Answer and explain:
+      -Yes, enums could be useful to identify categories of nutrients (e.g., MACRONUTRIENT for protein, carbs, and fats) ensuring that computations and retrievals are type safe.
+    - Can you implement your secondary methods using your kernel methods?
+      Answer, explain, and give at least one example:
+      - getWeeklyNutrientIntake(LocalDate weekStart) could utilize getTotalNutrients() to get data over a given week
 
 ## Post-Assignment
 
@@ -270,7 +281,6 @@ completed the assignment.
 
 ### Changelog
 
-<!-- TODO: create CHANGELOG then delete this comment -->
 
 At the end of every assignment, you should update the
 [CHANGELOG.md](../../CHANGELOG.md) file found in the root of the project folder.
@@ -288,13 +298,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Calendar Versioning](https://calver.org/) of
 the following form: YYYY.0M.0D.
 
-## YYYY.MM.DD
+## 2025.02.19
 
 ### Added
 
-- Designed a <!-- insert name of component 1 here --> component
-- Designed a <!-- insert name of component 2 here --> component
-- Designed a <!-- insert name of component 3 here --> component
+- Designed a <player stats tracker> component
+- Designed a <Virus Infaltion Tracker> component
+- Designed a <Nutrition Tracker> component
 ```
 
 Here `YYYY.MM.DD` would be the date of your submission, such as 2024.04.21.
