@@ -2,8 +2,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class PlayerStatsTracker {
-
-    // Internal representation: using a map to store stat names and their cumulative values.
     // This structure is mutable because player stats change after each game.
     private Map<String, Double> stats;
     private int totalGames;
@@ -88,7 +86,6 @@ public class PlayerStatsTracker {
         return this.getAverageStat("plusMinus", this.totalGamePlayed());
     }
 
-    // Main method demonstrating the component in action.
     public static void main(String[] args) {
         // Create an instance of PlayerStatsTracker
         PlayerStatsTracker tracker = new PlayerStatsTracker();
@@ -115,6 +112,5 @@ public class PlayerStatsTracker {
         // Example usage of secondary methods
         System.out.println("Calculated Win Rate: " + tracker.calculatedWinRate());
         System.out.println("Average Plus/Minus: " + tracker.avPlusMinus());
-
 
 }
