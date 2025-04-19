@@ -172,11 +172,27 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Calendar Versioning](https://calver.org/) of
 the following form: YYYY.0M.0D.
 
-## YYYY.MM.DD
+## 2024.04.18
 
 ### Added
+for example,
+public abstract class PlayerStatsTrackerSecondary
+        implements PlayerStatsTrackerKernel {
 
-- Designed abstract class for <!-- insert name of component here --> component
+    /**
+     *
+     * @param stat
+     * @param gamesPlayed
+     * @return this
+     */
+    public double getAverageStat(String stat, int gamesPlayed) {
+        if (gamesPlayed == 0) {
+            return 0.0;
+        }
+        return this.getStatTotal(stat) / gamesPlayed;
+    }
+
+- Designed abstract class for PlayerStatsTracker component
 
 ### Updated
 
