@@ -73,6 +73,29 @@ the following form: YYYY.0M.0D.
 - Created initial drafts of the six portfolio assessments
 - Added READMEs to key folders like `test` and `lib` to explain their purpose
 
+## [2024.04.18]
+
+### Added
+for example,
+public abstract class PlayerStatsTrackerSecondary
+        implements PlayerStatsTrackerKernel {
+
+    /**
+     *
+     * @param stat
+     * @param gamesPlayed
+     * @return this
+     */
+    public double getAverageStat(String stat, int gamesPlayed) {
+        if (gamesPlayed == 0) {
+            return 0.0;
+        }
+        return this.getStatTotal(stat) / gamesPlayed;
+    }
+
+- Designed abstract class for PlayerStatsTracker component
+
+
 [unreleased]: https://github.com/jrg94/portfolio-project/compare/v2024.08.07...HEAD
 [2024.08.07]: https://github.com/jrg94/portfolio-project/compare/v2024.01.07...v2024.08.07
 [2024.01.07]: https://github.com/jrg94/portfolio-project/releases/tag/v2024.01.07
